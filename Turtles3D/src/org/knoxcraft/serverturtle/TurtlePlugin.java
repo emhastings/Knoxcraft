@@ -91,6 +91,8 @@ public class TurtlePlugin extends Plugin implements CommandListener, PluginListe
             Canary.commands().registerCommands(this, this, false);
 
             lookupFromDB();
+            
+            //populate undo buffer here?
 
             return true;
         } catch (Exception e){
@@ -376,6 +378,8 @@ public class TurtlePlugin extends Plugin implements CommandListener, PluginListe
                     world.setBlockAt(b.getBlock().getPosition(), b.getBlock()); //Whats in buffer
                     //blocks.pop().revert();
                 }
+                
+                //update database
             }
         }
     }
