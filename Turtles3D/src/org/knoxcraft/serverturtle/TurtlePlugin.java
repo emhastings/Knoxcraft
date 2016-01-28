@@ -373,13 +373,13 @@ public class TurtlePlugin extends Plugin implements CommandListener, PluginListe
                 while(!blocks.empty())  {
                     // FIXME Currently, we just use the coordinates to replace the block with air, so it won't work 
                     // underwater for example. 
-                    BlockRecord b=blocks.pop();
+                    /*BlockRecord b=blocks.pop();
                     World world = sender.asPlayer().getWorld();
-                    world.setBlockAt(b.getBlock().getPosition(), b.getBlock()); //Whats in buffer
-                    //blocks.pop().revert();
+                    world.setBlockAt(b.getBlock().getPosition(), b.getBlock());*/ //Whats in buffer
+                    blocks.pop().revert();
                 }
                 
-                //update database
+                //update database here?  Replace old undo buffer for player with new, emptier one
             }
         }
     }

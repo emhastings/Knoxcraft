@@ -6,7 +6,7 @@ import net.canarymod.api.world.blocks.Block;
 public class BlockRecord {
     
     private Block block;
-    private Block prevBlock;
+    private Block prevBlock;  //what was this?  It's never set.
     private World world;
     
     /**
@@ -24,9 +24,11 @@ public class BlockRecord {
      * Return this block to this state.
      */
     public void revert()  {
-        world.setBlockAt(block.getPosition(), prevBlock);
+        //world.setBlockAt(block.getPosition(), prevBlock);  //what is prevBlock?
         //world.setBlock(block);  //does this work better?
         
+        //new try
+        world.setBlockAt(block.getPosition(), block);        
     }  
     
     /**
