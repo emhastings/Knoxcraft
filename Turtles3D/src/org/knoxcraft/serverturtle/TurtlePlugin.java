@@ -91,8 +91,6 @@ public class TurtlePlugin extends Plugin implements CommandListener, PluginListe
             Canary.commands().registerCommands(this, this, false);
 
             lookupFromDB();
-            
-            //populate undo buffer here?
 
             return true;
         } catch (Exception e){
@@ -171,6 +169,7 @@ public class TurtlePlugin extends Plugin implements CommandListener, PluginListe
     
     /**
      * TODO: Fix this hook. This doesn't seem to get called. I would like to shut rain off every time it starts raining.
+     * EMH 2/1:  I think it is getting called?  It is on my server anyway.
      * 
      * @param hook
      */
@@ -378,8 +377,6 @@ public class TurtlePlugin extends Plugin implements CommandListener, PluginListe
                     world.setBlockAt(b.getBlock().getPosition(), b.getBlock());*/ //Whats in buffer
                     blocks.pop().revert();
                 }
-                
-                //update database here?  Replace old undo buffer for player with new, emptier one
             }
         }
     }
